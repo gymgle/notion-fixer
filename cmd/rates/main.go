@@ -12,7 +12,7 @@ import (
 func main() {
 	fixerAccessKey := os.Getenv("FIXER_ACCESS_KEY")
 	ctx := context.Background()
-	rates, err := fixer.GetRates(ctx, fixerAccessKey, "usd")
+	rates, err := fixer.GetRates(ctx, fixerAccessKey, "eur")
 	if err != nil {
 		log.Fatal(err)
 	}
