@@ -32,7 +32,8 @@ func GetRates(ctx context.Context, accessKey, base string) (map[string]float64, 
 	}
 
 	res := req.Result().(*GetRatesResponse)
-	log.Println(res.Rates)
+	log.Println("url:", req.Request.URL)
+	log.Println("result:", req.Request.Result)
 
 	if res.Success {
 		return res.Rates, nil
