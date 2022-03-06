@@ -3,6 +3,7 @@ package fixer
 import (
 	"context"
 	"fmt"
+	"log"
 
 	"github.com/go-resty/resty/v2"
 )
@@ -31,6 +32,7 @@ func GetRates(ctx context.Context, accessKey, base string) (map[string]float64, 
 	}
 
 	res := req.Result().(*GetRatesResponse)
+	log.Panicln(res)
 
 	if res.Success {
 		return res.Rates, nil
